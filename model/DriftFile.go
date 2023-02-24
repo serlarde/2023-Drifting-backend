@@ -93,3 +93,39 @@ type CreateFile struct {
 	Number int    `json:"number"`
 	Kind   string `json:"kind" gorm:"size:255"`
 }
+
+type NovelContact struct {
+	FileID   int64  `json:"file_id"`
+	WriterID int64  `json:"writer_id"`
+	Text     string `json:"text" gorm:"type:text"`
+}
+
+type NovelInfo struct {
+	Name     string
+	OwnerID  int64
+	Contacts []NoteContact `json:"contacts"`
+}
+
+type PictureContact struct {
+	FileID   int64  `json:"file_id"`
+	WriterID int64  `json:"writer_id"`
+	Picture  string `json:"picture" grom:"size:255"`
+}
+
+type PictureInfo struct {
+	Name     string
+	OwnerID  int64
+	Contacts []DrawingContact
+}
+
+type DraftContact struct {
+	FileID   int64  `json:"file_id"`
+	WriterID int64  `json:"writer_id"`
+	Text     string `json:"text" gorm:"type:text"`
+}
+
+type DraftInfo struct {
+	Name     string
+	OwnerID  int64
+	Contacts []NoteContact `json:"contacts"`
+}
